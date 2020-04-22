@@ -7,7 +7,7 @@ import {
   Label,
   Input
 } from 'reactstrap';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
           </div>
 
           <div>
-            <Input id="Basefare" type="number" onChange = {this.props.baseFareValue} placeholder="Basefare" />
+            <Input id="Basefare" type="number" onChange={this.props.baseFareValue} placeholder="Basefare" />
           </div>
 
         </FormGroup>
@@ -32,38 +32,38 @@ class App extends Component {
             <Label className="labelClass"> GST </Label>
           </div>
           <div>
-            <Input type="number" value = {this.props.a.GST} id="GST" placeholder="Your GST..."
+            <Input type="number" value={this.props.a.GST} id="GST" placeholder="Your GST..."
             />
           </div>
         </FormGroup>
 
         <Label> Total  :  </Label>
         {this.props.a.total}
-        
 
-        <div style = {{textAlign :"center"}}>
-        <Button color="primary">Save</Button>
+
+        <div style={{ textAlign: "center" }}>
+          <Button color="primary">Save</Button>
         </div>
       </Form>
 
-      
+
 
 
     )
   }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   console.log(state);
   return {
-    a:state
+    a: state
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return{
-    baseFareValue : (e) => dispatch({type:'BSFVALUE', data : e.target.value})
+function mapDispatchToProps(dispatch) {
+  return {
+    baseFareValue: (e) => dispatch({ type: 'BSFVALUE', data: e.target.value })
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
